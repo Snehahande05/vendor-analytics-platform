@@ -1,0 +1,42 @@
+[
+  {
+    "amount": 120.00,
+    "customerName": "Alice Smith",
+    "createdAt": { "$date": "2024-08-01T10:00:00Z" }
+  },
+  {
+    "amount": 550.00,
+    "customerName": "Bob Johnson",
+    "createdAt": { "$date": "2024-08-05T12:30:00Z" }
+  },
+  {
+    "amount": 80.00,
+    "customerName": "Alice Smith",
+    "createdAt": { "$date": "2024-08-10T14:45:00Z" }
+  },
+  {
+    "amount": 200.00,
+    "customerName": "Charlie Brown",
+    "createdAt": { "$date": "2024-09-01T11:20:00Z" }
+  },
+  {
+    "amount": 600.00,
+    "customerName": "Bob Johnson",
+    "createdAt": { "$date": "2024-09-15T16:00:00Z" }
+  },
+  {
+    "amount": 350.00,
+    "customerName": "Alice Smith",
+    "createdAt": { "$date": "2024-10-02T09:10:00Z" }
+  },
+  {
+    "amount": 400.00,
+    "customerName": "Charlie Brown",
+    "createdAt": { "$date": "2024-10-10T13:40:00Z" }
+  },
+  {
+    "amount": 90.00,
+    "customerName": "Bob Johnson",
+    "createdAt": { "$date": "2024-10-15T17:00:00Z" }
+  }
+]

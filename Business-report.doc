@@ -1,0 +1,98 @@
+
+Below is the link of doc file for business report
+https://docs.google.com/document/d/1_Y-Z3OEtYufk2RaD_rxi5Gp12LsSN5598sRiMwFRRfY/edit?usp=sharing
+
+
+Vendor Performance Analytics Platform
+Business Report
+Date: October 06, 2025
+Author: Sneha Hande
+ 
+Executive Summary
+This document presents the business and operational overview of the Vendor Performance Analytics Platform. It covers the customer journey, analytics dashboards (NPS, RFM, CLV), sales funnel, operations plan, and brand strategy.
+
+Project Description
+The Vendor Performance Analytics Platform conatins vendor and order data, calculates vendor performance using scoring algorithms, and presents actionable insights via dashboards. The platform uses JSON sample data, JavaScript scripts for scoring (backend), and a frontend UI for visualization. Firebase is integrated for notifications.
+
+Customer Journey (Acquisition → Loyalty)
+Acquisition: Lead generation via digital ads, referrals, and outreach. Leads are captured into the platform and stored as vendor prospects.
+
+Onboarding: Vendors register via the frontend form; data is validated and stored. Seed scripts can populate test vendors.
+
+Engagement: Vendors receive performance reports (NPS, RFM, CLV) and notifications to improve metrics.
+
+Loyalty: Top performing vendors receive incentives, badges, or preferential access to leads, improving retention. Continuous monitoring and feedback loops (NPS surveys) support vendor loyalty.
+
+Dashboards (NPS, RFM, CLV)
+- NPS Dashboard: Shows Net Promoter Score (promoters vs detractors), trend chart and average score.
+- RFM Dashboard: Table and chart breaking down Recency, Frequency, Monetary scores and vendor segments.
+- CLV Dashboard: Estimated Customer (Vendor) Lifetime Value projections and top contributors.
+
+Sales Funnel Description
+Funnel stages:
+1. Awareness (referrals) → 2. Interest (sign-up) → 3. Consideration ( analytics review) → 4. Conversion (vendor onboarding) → 5. Retention (reports, incentives)
+
+Operationally, the platform supports data ingestion (orders_import_data.json), scoring (leadScoring.js), notifications (firebasePush.js), and scheduled or on-demand reporting.
+Operations Plan
+- Data ingestion: Upload JSON / CSV or run seed.js to populate database.
+- Scoring pipeline: leadScoring.js computes scores; priorityQueue.js orders vendors for reporting and leaderboards.
+- Notifications: firebasePush.js triggers push notifications for key events (low NPS, high CLV).
+- Maintenance: Protect serviceAccount.json and .env; schedule regular data validation and backups.
+
+Brand-building & Reputation Management
+- Brand Positioning: Position as a trustworthy, transparent analytics partner for vendor performance.
+- Messaging: Emphasize fairness, data-driven insights, and vendor growth.
+- Reputation: Collect NPS feedback, respond to vendor concerns quickly.
+- Privacy: Keep authentication keys and serviceAccount.json out of public repos; use environment variables for secrets.
+
+Frontend (frontend/index.html): Single-page HTML UI that displays dashboards and registration. Uses plain JavaScript for UI interactivity.
+
+Backend scripts (backend/): Contains plain JavaScript scripts intended to be run in a Node environment (server.js, leadScoring.js, priorityQueue.js, firebasePush.js, seed.js). leadScoring.js: scoring logic for vendor ranking. priorityQueue.js: utility to order vendors by score. firebasePush.js: integrates with Firebase Admin to send notifications. seed.js: helper to seed database with sample leads/orders.
+
+orders_import_data.json: Sample dataset of orders used for RFM and CLV calculations. Useful for demo and testing.
+
+docs/: Place final screenshots, export images, and the business report here.
+
+
+Detailed Feature Explanations (what, where, why, purpose)
+Vendor Registration Form — frontend/index.html
+Collects vendor details for onboarding; used as the primary acquisition touchpoint.
+
+
+Lead Scoring Algorithm — backend/leadScoring.js
+Calculates a composite score for vendors based on configurable metrics (e.g., recency, frequency, monetary value, NPS). Purpose: prioritize leads and recommend interventions.
+
+
+Priority Queue — backend/priorityQueue.js
+Keeps top vendors ordered by score for leaderboards and targeted outreach.
+
+
+Firebase Notifications — backend/firebasePush.js
+Sends push notifications to vendors/admins on events like low NPS or high CLV to trigger actions.
+
+
+Data Seed & Import — backend/seed.js & orders_import_data.json
+Populate database with sample records for demo/testing and to compute RFM/CLV.
+
+
+Server/API — backend/server.js
+Provides endpoints to fetch vendor data, trigger scoring, and serve dashboard data. 
+
+
+Detailed Setup Instructions (what you used)
+1. Frontend: Plain HTML + CSS + JavaScript
+   - To run locally: open frontend/index.html in a browser or serve via a local static server.
+
+2. Backend: JavaScript scripts and optional Node server
+   - If you use the server.js (Node + Express):
+     • Install Node.js (v14+ recommended).
+     • From backend/: run `npm install` to install dependencies.
+     • Configure .env (if present) and place serviceAccount.json securely (do NOT commit to GitHub).
+    
+   - If you prefer plain JS only (no Node):
+     • Move scoring scripts to run in the browser or as static worker scripts.
+     • Use frontend to load orders_import_data.json via fetch and compute RFM/CLV client-side.
+
+3. Firebase: Requires a Firebase service account file (`serviceAccount.json`) and enabling Firestore/Cloud Messaging for push notifications.
+
+
