@@ -1,5 +1,7 @@
 # vendor-analytics-platform
 
+Live Link :- https://vendor-analytics-platform.onrender.com
+
 **Project Title** :- Develop a vendor performance analytics platform using Mongodb firebase with dynamic programming for score calculation using any data structure 
 
 **scenario/theme** :- Customer Acquisition to Loyalty: Sales Funnel & Operations Dashboard
